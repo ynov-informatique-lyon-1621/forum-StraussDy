@@ -237,13 +237,19 @@ body {
 }
 
 .setting {
-    width: 92%;
+    width: 50%;
+}
+
+.automatically {
+    width: 50%;
+    text-align: right;
 }
 
 .automatically p {
     font-size: 16px;
     color: #7f8fa4;
     margin: 0;
+    padding-right: 30px;
 }
 
 .setting h2 {
