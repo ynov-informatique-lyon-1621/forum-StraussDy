@@ -1,0 +1,77 @@
+doctype html
+html(lang='fr')
+    head
+        meta(charset='UTF-8')
+        title Forum
+        link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
+        link(rel='stylesheet', href='css/styles.css')
+    body
+        div(class="navbar")
+            a(href="/")
+                img(src="icon/sent-mail.png")
+            div(class="menu")
+                a(href="/addquestion")
+                    span Add Question
+                if user.role === "admin"
+                    a(href="/admin/")
+                        span Administrateur
+                else
+                    a(href="")
+                        span Browse
+                a(href="")
+                    span Your Tickets
+            div(class="profile")
+                form(method="post")
+                    input(type="text", name="search", placeholder="Search")
+                    button(type="submit")
+                        img(src="icon/search.png")
+                a(href="/profile")
+                    span #{user.fullname}
+                a(class="power" href="disconnect")
+                    img(src="icon/power-button.png")
+        div(class="container-home")
+            div(class="h2-title")
+                h2 Featured Questions
+            div(class="container-img")
+                div(class="img-home")
+                    img(src="/img/canyon.jpg")
+                    div(class="flex")
+                        div(class="img-title")
+                            h2 Designing in US
+                            p United States, San Fransisco
+                        div(class="img-button")
+                            button Buy for $560
+                div(class="img-home margin")
+                    img(src="/img/canyon.jpg")
+                    div(class="flex")
+                        div(class="img-title")
+                            h2 Photography Class
+                            p United States, San Fransisco
+                        div(class="img-button")
+                            button Buy for $280
+            div(class="container-question")
+                h2 All Questions
+                div(class="title-question")
+                    div(class="p1-question")
+                        p Title
+                    div(class="p1-question")
+                        p User
+                    div(class="p1-question")
+                        p Date
+                div(class="home-question")
+                    div(class="res-question")
+                        for question in questions
+                            question
+                                if question
+                                    if question.resolu === null
+                                        a(href="/question/" + question.id)
+                                            p #{question.title}
+                                        p #{question.user.fullname}
+                                        p #{moment(question.createdAt).fromNow()}
+                                        img(src="icon/error.png")
+                                    else
+                                        a(href="/question/" + question.id)
+                                            p #{question.title}
+                                        p #{question.user.fullname}
+                                        p #{moment(question.createdAt).fromNow()}
+                                        img(src="icon/checked.png")

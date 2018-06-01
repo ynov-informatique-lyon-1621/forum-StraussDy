@@ -14,6 +14,16 @@ body {
     background-color: #fff;
 }
 
+.container-register {
+    position: absolute;
+    top: 20%;
+    left: 38%;
+    border: solid 1px #e7e9ed;
+    width: 450px;
+    height: 730px;
+    background-color: #fff;
+}
+
 .container-title {
     border-bottom: solid 1px #e7e9ed;
     height: 110px;
@@ -58,10 +68,25 @@ body {
     border: solid 1px #dfe3e9;
     margin-top: 8px;
     margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.container-login textarea {
+    display: block;
+    color: #354052;
+    width: 390px;
+    height: 46px;
+    background-color: #f8fafc;
+    border-radius: 5px;
+    border: solid 1px #dfe3e9;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 
 .container-login button {
-    width: 390px;
+    width: 403px;
     height: 46px;
     background: #36af46;
     color: #fff;
@@ -95,7 +120,7 @@ body {
     left: 125px;
     font-weight: normal;
     background-color: #fff;
-    width: 150px;
+    width: 170px;
     padding-right: 30px;
     padding-left: 30px;
     margin: 0;
@@ -220,3 +245,6 @@ img {
     text-decoration: underline;
 }
 
+.footer {
+    padding-top: 150px;
+}

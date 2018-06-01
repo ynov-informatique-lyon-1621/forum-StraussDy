@@ -1,0 +1,33 @@
+{
+  "name": "forum-straussdy",
+  "version": "1.0.0",
+  "description": "forum-StraussDy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ynovforum/forum-StraussDy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ynovforum/forum-StraussDy/issues"
+  },
+  "homepage": "https://github.com/ynovforum/forum-StraussDy#readme",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "moment": "^2.22.1",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "sequelize": "^4.37.10",
+    "sequelize-require-models": "^0.1.0"
+  }
+}

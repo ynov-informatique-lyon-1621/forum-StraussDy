@@ -1,0 +1,38 @@
+doctype html
+html(lang='fr')
+    head
+        meta(charset='UTF-8')
+        title Forum
+        link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
+        link(rel='stylesheet', href='/css/styles.css')
+        link(rel='stylesheet', href='/css/admin.css')
+    body
+        div(class="navbar-profile")
+            div(class="menu-profile")
+                a(href="/")
+                    span Dashboard
+                a(href="")
+                    span Courses
+                a(href="")
+                    span Applications
+                a(href="")
+                    span Students
+                a(href="")
+                    span(class="active") Settings
+            div(class="menu-img")
+                img(src="/icon/sent-mail.png")
+            div(class="menu-icon")
+                img(src="/icon/wallet.png")
+                img(src="/icon/man-user.png")
+                img(src="/icon/message.png")
+                a(href="/profile")
+                    span #{user.fullname}
+                a(class="" href="disconnect")
+                    img(src="/icon/power-button.png")
+
+        div(class="list-user")
+            div(class="")
+            h2 Users-list
+            for item in users
+                p=item.username
+                p=item.bio

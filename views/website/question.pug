@@ -1,0 +1,84 @@
+doctype html
+html(lang='fr')
+    head
+        meta(charset='UTF-8')
+        title Forum
+        link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        div(class="navbar")
+            a(href="/")
+                img(src="/icon/sent-mail.png")
+            div(class="menu")
+                a(href="/addquestion")
+                    span Add Question
+                if user.role === "admin"
+                    a(href="/admin/")
+                        span Administrateur
+                else
+                    a(href="")
+                        span Browse
+                a(href="")
+                    span Your Tickets
+            div(class="profile")
+                form(method="post")
+                    input(type="text", name="search", placeholder="Search")
+                    button(type="submit")
+                        img(src="/icon/search.png")
+                a(href="/profile")
+                    span #{user.fullname}
+                a(class="power" href="/disconnect")
+                    img(src="/icon/power-button.png")
+        div(class="container-quest")
+            div(class="quest-left")
+                h2 #{question.title}
+                h3 #{question.user.fullname} | #{moment(question.createdAt).fromNow()}
+                p #{question.content}
+
+                for comment in question.comments
+                    comment
+                    div(class="quest-content")
+                        h3 #{comment.user.fullname} | #{moment(comment.createdAt).fromNow()}
+                        p #{comment.content}
+
+                if user
+                    div(class="quest-form")
+                        div(class="resolve flex")
+                            h2 Know someone who can answer? Share a link to this question via email, Google+, Twitter, or Facebook.
+                            if question
+                                if question.resolu === null
+                                    form(method="post", action="/question/" + question.id + "/resolu")
+                                        button(type='submit') Non Résolu
+                                else
+                                    form(method="post", action="/question/" + question.id + "/resolu")
+                                        div(class="green")
+                                            button(type='submit') Résolu
+                        form(action='/comment/' + question.id, method='post')
+                            label(for='content') Your Answser
+                            textarea(class="text" id='content' name='content')
+                            div(class="right")
+                                button(type='submit') Envoyer
+                else
+                    a(href="/login") Ajouter un commentaire
+
+            div(class="quest-right")
+                div(class="quest-right-bottom1")
+                    div(class="flex")
+                        img(src="/icon/reload.png")
+                        h2 Tips for asking questions
+                    p Every question you ask should help you gather either facts or an opinion. Know which kind of information you need and frame your questions accordingly.
+                    div(class="flex")
+                        img(src="/icon/reload.png")
+                        h2 Tips for asking questions
+                    P Even if you don't find a useful answer elsewhere on the site, including links to related questions that haven't helped can help others in understand-ing how your question is different from the rest.
+                    h3 Still need help? Contact Support
+                div(class="quest-right-bottom2")
+                    div(class="quest-right-img")
+                        img(src="/img/canyon.jpg")
+                    div(class="quest-right-title")
+                        h2 Productivity on Maximum
+                        h4 Instructor: Carlos Fereira
+                        p In 1915, Albert Einstein presented his brilliant and revolutionary theory of relativity. In the three years leading up to that, he had completely...
+                        hr
+                        span(class="border-top") Passed by 54 of tour friends
+                        button Free Take this Class
