@@ -4,7 +4,8 @@ html(lang='fr')
         meta(charset='UTF-8')
         title Forum
         link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
-        link(rel='stylesheet', href='css/styles.css')
+        link(rel='stylesheet', href='css/navbar_white.css')
+        link(rel='stylesheet', href='css/addquestion.css')
     body
         div(class="navbar")
             a(href="/")
@@ -12,8 +13,12 @@ html(lang='fr')
             div(class="menu")
                 a(href="/addquestion")
                     span Add Question
-                a(href="")
-                    span Browse
+                if user.role === "admin"
+                    a(href="/admin/")
+                        span Administrateur
+                else
+                    a(href="")
+                        span Browse
                 a(href="")
                     span Your Tickets
             div(class="profile")
@@ -28,8 +33,6 @@ html(lang='fr')
         div(class="container")
             div(class="container-title")
                 h1 New question
-                div(class="container-button")
-                    button(type="submit") + Add New Question
             div(class="question-add")
                 div(class="ques-form")
                     form(action='addquestion' method='post')

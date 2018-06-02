@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  background-color: #eff3f6;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container-home {
+  width: 870px;
+  margin: auto;
+}
+
+.h2-title {
+  padding-top: 40px;
+  padding-bottom: 29px;
+
+  h2 {
+    margin: 0;
+    color: #364153;
+    font-weight: normal;
+  }
+}
+
+.container-img {
+  display: flex;
+  width: 100%;
+}
+
+.img-home {
+
+}
+
+.img-home {
+  background-color: #ffffff;
+  width: 100%;
+  margin-right: 50px;
+  border: solid 1px #e6eaee;
+  border-radius: 5px;
+  padding: 10px;
+
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  h2 {
+    font-size: 16px;
+    color: #465061;
+    margin: 0;
+    padding-top: 15px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #b8c1cc;
+    margin: 0;
+    padding-bottom: 18px;
+  }
+}
+
+.margin {
+  margin-right: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.img-title {
+  width: 50%;
+}
+
+.img-button {
+  width: 50%;
+  margin: auto;
+  text-align: right;
+
+  button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: #36af47;
+    border: solid 1px #2f933e;
+    color: white;
+    border-radius: 5px;
+  }
+}
+
+.container-question {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 30px;
+  display: block;
+  border: 1px solid #e7e9ed;
+  border-radius: 5px;
+  margin-bottom: 50px;
+
+  h2 {
+    margin: 0;
+    padding-top: 30px;
+    font-size: 24px;
+    font-weight: normal;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }
+}
+
+.title-question {
+  display: flex;
+  width: 100%;
+  background-color: #f5f8fa;
+
+  p {
+    color: #93a0b2
+  }
+}
+
+.p1-question {
+  width: 32%;
+  padding-left: 30px;
+}
+
+.padding {
+  padding-left: 0;
+}
+
+.home-question {
+
+}
+
+.res-question {
+  width: 100%;
+
+}
+
+.res-question question {
+  display: flex;
+  border-bottom: solid 1px #e7e9ed;
+
+  img {
+    margin: auto;
+    margin-right: 15px;
+  }
+
+  a {
+    color: #747a83;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.res-question p {
+  width: 250px;
+  padding-left: 30px;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #747a83;
+}

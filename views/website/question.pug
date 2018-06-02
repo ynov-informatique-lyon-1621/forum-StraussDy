@@ -4,7 +4,8 @@ html(lang='fr')
         meta(charset='UTF-8')
         title Forum
         link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
-        link(rel='stylesheet', href='/css/styles.css')
+        link(rel='stylesheet', href='/css/navbar_white.css')
+        link(rel='stylesheet', href='/css/question.css')
     body
         div(class="navbar")
             a(href="/")
@@ -43,7 +44,7 @@ html(lang='fr')
 
                 if user
                     div(class="quest-form")
-                        div(class="resolve flex")
+                        div(class="resolve")
                             h2 Know someone who can answer? Share a link to this question via email, Google+, Twitter, or Facebook.
                             if question
                                 if question.resolu === null
@@ -67,6 +68,7 @@ html(lang='fr')
                         img(src="/icon/reload.png")
                         h2 Tips for asking questions
                     p Every question you ask should help you gather either facts or an opinion. Know which kind of information you need and frame your questions accordingly.
+                    hr
                     div(class="flex")
                         img(src="/icon/reload.png")
                         h2 Tips for asking questions

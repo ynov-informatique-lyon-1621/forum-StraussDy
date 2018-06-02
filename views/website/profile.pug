@@ -4,28 +4,31 @@ html(lang='fr')
         meta(charset='UTF-8')
         title Forum
         link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
-        link(rel='stylesheet', href='css/styles.css')
+        link(rel='stylesheet', href='css/navbar_white.css')
+        link(rel='stylesheet', href='css/profile.css')
     body
-        div(class="navbar-profile")
-            div(class="menu-profile")
-                a(href="/")
-                    span Dashboard
+        div(class="navbar")
+            a(href="/")
+                img(src="/icon/sent-mail.png")
+            div(class="menu")
+                a(href="/addquestion")
+                    span Add Question
+                if user.role === "admin"
+                    a(href="/admin/")
+                        span Administrateur
+                else
+                    a(href="")
+                        span Browse
                 a(href="")
-                    span Courses
-                a(href="")
-                    span Applications
-                a(href="")
-                    span Students
-                a(href="")
-                    span(class="active") Settings
-            div(class="menu-img")
-                img(src="icon/sent-mail.png")
-            div(class="menu-icon")
-                img(src="icon/wallet.png")
-                img(src="icon/man-user.png")
-                img(src="icon/message.png")
-                span #{user.fullname}
-                a(class="" href="disconnect")
+                    span Your Tickets
+            div(class="profile")
+                form(method="post")
+                    input(type="text", name="search", placeholder="Search")
+                    button(type="submit")
+                        img(src="icon/search.png")
+                a(href="/profile")
+                    span #{user.fullname}
+                a(class="power" href="disconnect")
                     img(src="icon/power-button.png")
         div(class="profile-setting")
             div(class="setting")
@@ -65,24 +68,27 @@ html(lang='fr')
                         h2 Support
                         p Do you need help?
             div(class="bio")
-                h2 My Profile
-                div(class="bio-form")
-                    form
-                        div(class="bio-img")
-                            img(src="icon/reload.png")
-                            label Your name
-                            input(value=user.fullname)
-                        label Bio
-                        textarea #{user.bio}
-                        label E-mail Address
-                        input(value=user.username)
-                        button Change
-                        label Password
-                        input(type="password", value=user.password)
-                        button Change
+                div(class="bio-1")
+                    h2 My Profile
+                    div(class="bio-form")
+                        form
+                            div(class="bio-img flex")
+                                div(class="bio-left")
+                                    img(src="icon/reload.png")
+                                div(class="bio-right")
+                                    label Your name
+                                    input(value=user.fullname)
+                            label Bio
+                            textarea #{user.bio}
+                            label E-mail Address
+                            input(value=user.username)
+                            button Change
+                            label Password
+                            input(type="password", value=user.password)
+                            button Change
                 div(class="service")
                     h2 Connected Services
-                    div(class="service-list margin")
+                    div(class="service-list")
                         div(class="service-title")
                             img(src="icon/paypal.png")
                             p Paypal
