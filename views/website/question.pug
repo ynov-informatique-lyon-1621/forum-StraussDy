@@ -32,28 +32,42 @@ html(lang='fr')
                     img(src="/icon/power-button.png")
         div(class="container-quest")
             div(class="quest-left")
-                h2 #{question.title}
-                h3 #{question.user.fullname} | #{moment(question.createdAt).fromNow()}
-                p #{question.content}
-
+                div(class="quest-border")
+                    h2 #{question.title}
+                    h3 #{question.user.fullname} | #{moment(question.createdAt).fromNow()}
+                    p #{question.content}
                 for comment in question.comments
                     comment
                     div(class="quest-content")
                         h3 #{comment.user.fullname} | #{moment(comment.createdAt).fromNow()}
                         p #{comment.content}
-
+                        div(class="flex")
+                            if user.id === comment.user.id
+                                a(href="/comment/" + comment.id + "/newcomment")
+                                    button Edit
+                            div(class="delete")
+                                if user.role === 'admin'
+                                    form(method="post", action="/comment/" + comment.id + "/suppr")
+                                        button(class="delete" type='submit') Delete
                 if user
                     div(class="quest-form")
                         div(class="resolve")
                             h2 Know someone who can answer? Share a link to this question via email, Google+, Twitter, or Facebook.
-                            if question
-                                if question.resolu === null
-                                    form(method="post", action="/question/" + question.id + "/resolu")
-                                        button(type='submit') Non Résolu
-                                else
-                                    form(method="post", action="/question/" + question.id + "/resolu")
+                            div(class="flex")
+                                if question
+                                    if question.resolu === null
+                                        form(method="post", action="/question/" + question.id + "/resolu")
+                                            button(type='submit') Non Résolu
+                                    else
                                         div(class="green")
                                             button(type='submit') Résolu
+                                    if user.id == question.user.id
+                                        div(class="blue")
+                                            a(href="/question/" + question.id + "/newquestion")
+                                                button Edit Question
+                                    if user.role == 'admin'
+                                        form(method="post", action="/question/" + question.id + "/suppr")
+                                            button(class="suppr" type='submit') Delete Question
                         form(action='/comment/' + question.id, method='post')
                             label(for='content') Your Answser
                             textarea(class="text" id='content' name='content')
@@ -61,6 +75,8 @@ html(lang='fr')
                                 button(type='submit') Envoyer
                 else
                     a(href="/login") Ajouter un commentaire
+
+
 
             div(class="quest-right")
                 div(class="quest-right-bottom1")

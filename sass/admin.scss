@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  background-color: #eff3f6;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar-profile {
+  width: 100%;
+  background-color: #2096ef;
+  display: flex;
+}
+
+.navbar-profile img{
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.menu-profile {
+  margin-left: 30px;
+  padding-top: 27px;
+  color: white;
+  padding-bottom: 27px;
+  width: 47%;
+}
+
+.menu-profile span {
+  margin-right: 40px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #1d61a1;
+  border-radius: 5px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-left: -10px;
+}
+
+.menu-icon {
+  width: 50%;
+  text-align: right;
+
+  span {
+    margin-left: 10px;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.power {
+  margin-right: 30px;
+  margin-left: 10px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.list {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.list-user {
+  width: 100%;
+  background-color: white;
+  margin: auto;
+  border: 1px solid #b0c6e3;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+
+  p {
+    font-size: 14px;
+    color: #6b7380;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    margin-top: 12px;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+}

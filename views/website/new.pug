@@ -1,0 +1,42 @@
+doctype html
+html(lang='fr')
+    head
+        meta(charset='UTF-8')
+        title Forum
+        link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
+        link(rel='stylesheet', href='/css/navbar_white.css')
+        link(rel='stylesheet', href='/css/addquestion.css')
+    body
+        div(class="navbar")
+            a(href="/")
+                img(src="/icon/sent-mail.png")
+            div(class="menu")
+                a(href="/addquestion")
+                    span Add Question
+                if user.role === "admin"
+                    a(href="/admin/")
+                        span Administrateur
+                else
+                    a(href="")
+                        span Browse
+                a(href="")
+                    span Your Tickets
+            div(class="profile")
+                form(method="post")
+                    input(type="text", name="search", placeholder="Search")
+                    button(type="submit")
+                        img(src="/icon/search.png")
+                a(href="/profile")
+                    span #{user.fullname}
+                a(class="power" href="disconnect")
+                    img(src="/icon/power-button.png")
+        div(class="container")
+            div(class="container-title")
+                h1 Edit comment
+            div(class="question-add")
+                div(class="ques-form")
+                    if user
+                        form(action='/comment/' + comment.id + "/newcomment", method='post' )
+                            label(for='content') Comment
+                            textarea(id='content' name='content') #{comment.content}
+                            button(type='submit') Send

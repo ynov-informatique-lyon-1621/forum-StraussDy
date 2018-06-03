@@ -4,7 +4,6 @@ html(lang='fr')
         meta(charset='UTF-8')
         title Forum
         link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
-        link(rel='stylesheet', href='/css/styles.css')
         link(rel='stylesheet', href='/css/admin.css')
     body
         div(class="navbar-profile")
@@ -27,12 +26,13 @@ html(lang='fr')
                 img(src="/icon/message.png")
                 a(href="/profile")
                     span #{user.fullname}
+            div(class="power")
                 a(class="" href="disconnect")
                     img(src="/icon/power-button.png")
 
-        div(class="list-user")
-            div(class="")
+        div(class="list")
             h2 Users-list
             for item in users
-                p=item.username
-                p=item.bio
+                div(class="list-user")
+                    img(src="/icon/reload.png")
+                    p=item.username

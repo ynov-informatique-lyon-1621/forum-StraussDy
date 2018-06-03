@@ -45,14 +45,35 @@ body {
     margin: 0;
     overflow: hidden;
   }
+
+  a {
+    font-size: 14px;
+  }
+  button {
+    color: white;
+    background-color: #1b69ad;
+    border-radius: 5px;
+    border: solid 1px #1d61a1;
+    margin-right: 10px;
+  }
 }
 
-.quest-content h3 {
-  font-size: 14px;
-  margin: 0;
-  font-weight: normal;
-  color: #9fabbd;
-  padding-top: 35px;
+.quest-border {
+  border-bottom: solid 1px #e7e9ed;
+  padding-bottom: 20px;
+}
+
+.quest-content {
+
+  h3 {
+    width: 100%;
+    font-size: 14px;
+    margin: 0;
+    font-weight: normal;
+    color: #9fabbd;
+    padding-top: 35px;
+  }
+
 }
 
 .quest-right {
@@ -232,4 +253,20 @@ body {
   background-color: #36af47;
   color: white;
   border: solid 1px #2f933e;
+}
+
+.delete {
+  button {
+    background-color: #af342b;
+    color: white;
+    border: solid 1px #8b2d25;
+  }
+}
+
+.blue button {
+  color: white;
+  background-color: #1b69ad;
+  border-radius: 5px;
+  border: solid 1px #1d61a1;
+  margin-right: 10px;
 }

@@ -84,6 +84,52 @@ router.post('/comment/:questionId', (req, res) => {
         .then(() => res.redirect('/question/' + req.params.questionId));
 });
 
+router.get('/comment/:commentId/newcomment', (req, res) => {
+    const { content } = req.body;
+    Comment
+        .sync()
+        .then(() => Comment.findOne({where: {id: req.params.commentId}, include: [User] }))
+        .then((comment) => res.render('website/new', {comment,user: req.user}));
+});
+router.post('/comment/:commentId/newcomment', (req, res) => {
+    const { content } = req.body;
+    Comment
+        .sync()
+        .then(() => Comment.update({ content }, {where: {id: req.params.commentId}}))
+        .then(() => Comment.findOne({where: {id: req.params.commentId}}))
+        .then((comment) =>
+        { console.log(comment);
+            res.redirect('/question/'+ comment.questionId)});
+});
+router.post('/question/:questionId/newquestion', (req, res) => {
+    const { title, content } = req.body;
+    Question
+        .sync()
+        .then(() => Question.update({title, content },{where: {id: req.params.questionId}}))
+        .then((question) => res.redirect('/question/'+ req.params.questionId));
+});
+
+router.get('/question/:questionId/newquestion', (req, res) => {
+    const { title, content } = req.body;
+    Question
+        .sync()
+        .then(() => Question.findOne({where: {id: req.params.questionId}, include: [User] }))
+        .then((question) => res.render('website/newq', {question, user: req.user}));
+});
+
+router.post('/question/:questionId/suppr', (req, res) => {
+    Question
+        .sync()
+        .then(() => Question.destroy( {where: {id: req.params.questionId}}))
+        .then(()=> res.redirect('/'));
+});
+
+router.post('/comment/:commentId/suppr', (req, res) => {
+    Comment
+        .sync()
+        .then(() => Comment.destroy( {where: {id: req.params.commentId}}))
+        .then(()=> res.redirect('/'));
+});
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
